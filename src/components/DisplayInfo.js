@@ -4,10 +4,13 @@ import logo from './../logo.svg'
 
 class DisplayInfo extends React.Component {
 
-    state = {
-        isShow: true
+    constructor(props) {
+        super(props);
+        this.state = {
+            isShow: true
+        }
     }
-
+    
     handleShow = () => {
         this.setState({
             isShow: !this.state.isShow
