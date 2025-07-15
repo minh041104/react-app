@@ -3,12 +3,20 @@ import React from 'react'
 class DisplayInfo extends React.Component {
 
     render() { 
-        const {name, age} = this.props;
-        
+        const {listUser} = this.props;
+
         return (
             <div>
-                <div>My name is {name}</div>
-                <div>My age is {age}</div>
+                {
+                    listUser.map((user) => {
+                        return (
+                            <div key={user.id}>
+                                <div>My name is {user.name}</div>
+                                <div>My age is {user.age}</div>
+                            </div>
+                        )
+                    })
+                }
             </div>
         )
     }
