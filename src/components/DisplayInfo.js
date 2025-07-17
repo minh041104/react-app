@@ -5,12 +5,24 @@ import logo from './../logo.svg'
 class DisplayInfo extends React.Component {
 
     constructor(props) {
+        console.log('constructor');
         super(props);
         this.state = {
             isShow: true
         }
     }
     
+    componentDidMount() {
+        console.log('componentDidMount');
+        setTimeout(() => {
+            document.title = 'Hello React';
+            }, 3000)
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('componentDidUpdate', prevProps, this.props);
+    }
+
     handleShow = () => {
         this.setState({
             isShow: !this.state.isShow
@@ -19,6 +31,7 @@ class DisplayInfo extends React.Component {
 
 
     render() { 
+        console.log('render');
         const {listUser} = this.props;
 
         return (
