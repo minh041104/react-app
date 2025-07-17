@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './DisplayInfo.scss'
 
 // stateless component vs stateful component
@@ -32,11 +32,19 @@ import './DisplayInfo.scss'
 // }
 // stateless component cũng có cách viết:
 const DisplayInfo = (props) => {
-
     const {listUser} = props;
+    const [isShow, setIsShow] = useState(true);
+
+    const handleShow = () => {
+        setIsShow(!isShow);
+    }
+    
         return (
             <div className='display-info-container'>
-                {true && (
+                <div>
+                    <span onClick={handleShow}>{isShow ? 'Hide' : 'Show'}</span>
+                </div>
+                {isShow && (
                     <>
                         {
                             listUser.map((user) => {
