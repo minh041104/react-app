@@ -1,8 +1,7 @@
-// function component   
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddUserInfo from "./AddUserInfo";
 import DisplayInfo from "./DisplayInfo";
-// class component
+
 const MyComponent = (props) => {
     const [listUser, setListUser] = useState([
             {
@@ -30,7 +29,15 @@ const MyComponent = (props) => {
         setListUser(listUser.filter(user => user.id !== userId));
     }
 
-        //DRY
+    console.log("render");
+    useEffect(() => {
+        setTimeout (() => {
+            document.title = "hello";
+        },3000)
+        console.log("useEffect");
+    },[listUser]);
+
+
     return (
     <>
         <div className="a">
