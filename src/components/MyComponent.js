@@ -1,12 +1,10 @@
 // function component   
-import React from "react";
+import React, { useState } from "react";
 import AddUserInfo from "./AddUserInfo";
 import DisplayInfo from "./DisplayInfo";
 // class component
-class MyComponent extends React.Component {
-
-    state = {
-        listUser: [
+const MyComponent = (props) => {
+    const [listUser, setListUser] = useState([
             {
                 id: 1,
                 name: "minh",
@@ -22,34 +20,26 @@ class MyComponent extends React.Component {
                 name: "m342inh",
                 age: 224
             }
-        ]
+        ]);
+
+    const handleAddUser = (user) => {
+        setListUser([user,...listUser]);
     }
 
-    handleAddUser = (user) => {
-        this.setState({
-            listUser: [user,...this.state.listUser]
-        })
+    const handleDeleteUser = (userId) => {
+        setListUser(listUser.filter(user => user.id !== userId));
     }
 
-    handleDeleteUser = (userId) => {
-        this.setState({
-            listUser: this.state.listUser.filter(user => user.id !== userId)
-        })
-
-    }
-
-    render() {
         //DRY
-        return (
-        <>
-            <div className="a">
-                <AddUserInfo handleAddUser={this.handleAddUser}/>
-                <br></br>
-                <DisplayInfo listUser={this.state.listUser} handleDeleteUser={this.handleDeleteUser}/>
-            </div>
-        </>
-        )
-    }
+    return (
+    <>
+        <div className="a">
+            <AddUserInfo handleAddUser={handleAddUser}/>
+            <br></br>
+            <DisplayInfo listUser={listUser} handleDeleteUser={handleDeleteUser}/>
+        </div>
+    </>
+    )
 }
 
 export default MyComponent;
