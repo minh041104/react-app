@@ -8,9 +8,36 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 .app-container {
   .header-container {
+    padding-top: 24px;
+
+    .btn-login {
+      background-color: transparent;
+      border: 0;
+      padding: 0 16px;
+      border-radius: 10px;
+      margin-right: 16px;
+      height: 40px;
+    }
+    .btn-signup {
+      border-radius: 13px;
+      padding: 0 16px;
+      background-color: #292929;
+      color: #fff;
+      height: 40px;
+
+      transition: all 0.4s ease-in-out;
+      &:hover {
+        background-color: #3f3f3f;
+        //animation 
+        border-radius: 18px;
+      }
+    }
     .navbar-nav {
+      z-index: 10;
+      background-color: transparent !important;
       .nav-link {
         &.active {
           color: #00aeff;
@@ -18,5 +45,49 @@ body {
       }
     }
   }
+  .homepage-content {
+    position: relative;
+    padding: 140px 0 0 470px; 
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .title {
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #000000;
+      margin-bottom: 24px;
+    }
+    .description {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #000000;
+      margin-bottom: 24px;
+    }
+    .btn-create {
+      border-radius: 13px;
+      padding: 0 16px;
+      background-color: #292929;
+      color: #fff;
+      height: 40px;
+
+      transition: all 0.4s ease-in-out;
+      &:hover {
+        background-color: #3f3f3f;
+        //animation 
+        border-radius: 18px;
+      }
+    }
+  }
 }
 
+video {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
