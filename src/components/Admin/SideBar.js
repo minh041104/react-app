@@ -8,7 +8,9 @@ import {
   SidebarFooter,
   SidebarContent,
 } from 'react-pro-sidebar';
-import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart } from 'react-icons/fa';
+import { FaTachometerAlt, FaGem, FaGithub} from 'react-icons/fa';
+import { GiCat } from "react-icons/gi";
+import './SideBar.scss'
 import sidebarBg from '../../assets/bg2.jpg';
 
 
@@ -36,7 +38,8 @@ const SideBar = (props) => {
             whiteSpace: 'nowrap',
           }}
         >
-          title
+          <GiCat size="3em" color='white' />
+          Tọt Nguyễn
         </div>
       </SidebarHeader>
 
@@ -44,20 +47,18 @@ const SideBar = (props) => {
         <Menu iconShape="circle">
           <MenuItem
             icon={<FaTachometerAlt />}
-            suffix={<span className="badge red">new</span>}
           >
-            dashboard
+            Dashboard
           </MenuItem>
-          <MenuItem icon={<FaGem />}> components</MenuItem>
         </Menu>
         <Menu iconShape="circle">
           <SubMenu
-            suffix={<span className="badge yellow">3</span>}
-            icon={<FaRegLaughWink />}
+            icon={<FaGem />}
+            title="Feature Management"
           >
-            <MenuItem>submenu 1</MenuItem>
-            <MenuItem>submenu 2</MenuItem>
-            <MenuItem>submenu 3</MenuItem>
+            <MenuItem>User Management</MenuItem>
+            <MenuItem>Quiz Management</MenuItem>
+            <MenuItem>Question Management</MenuItem>
           </SubMenu>
         </Menu>
       </SidebarContent>
@@ -70,13 +71,14 @@ const SideBar = (props) => {
           }}
         >
           <a
-            href="https://github.com/azouaoui-med/react-pro-sidebar"
+            href="https://github.com/minh041104/react-app"
             target="_blank"
             className="sidebar-btn"
             rel="noopener noreferrer"
           >
             <FaGithub />
             <span style={{ whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
+                Nguyen Minh
             </span>
           </a>
         </div>
