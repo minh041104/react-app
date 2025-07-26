@@ -12,6 +12,7 @@ import { FaTachometerAlt, FaGem, FaGithub} from 'react-icons/fa';
 import { GiCat } from "react-icons/gi";
 import './SideBar.scss'
 import sidebarBg from '../../assets/bg2.jpg';
+import { Link } from 'react-router-dom';
 
 
 const SideBar = (props) => {
@@ -49,6 +50,7 @@ const SideBar = (props) => {
             icon={<FaTachometerAlt />}
           >
             Dashboard
+            <Link to='/admins' />
           </MenuItem>
         </Menu>
         <Menu iconShape="circle">
@@ -56,7 +58,9 @@ const SideBar = (props) => {
             icon={<FaGem />}
             title="Feature Management"
           >
-            <MenuItem>User Management</MenuItem>
+            <MenuItem>User Management
+            <Link to='/admins/manage-user' />
+            </MenuItem>
             <MenuItem>Quiz Management</MenuItem>
             <MenuItem>Question Management</MenuItem>
           </SubMenu>
