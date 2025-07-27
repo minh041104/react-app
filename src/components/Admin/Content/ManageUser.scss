@@ -1,6 +1,20 @@
 .manage-user-container {
     .manage-user-content {
-         
+        .btn-add-user {
+            button {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+    .title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #333333;
     }
 }
 
